@@ -4,8 +4,6 @@ from core.models import Comunicado, Categoria
 def index(request):
     nivelPOST = request.POST.get('nivel', None)
     categoriaPOST= request.POST.get('categoria', None)
-
-    comunicados = Comunicado.objects.all()
     comunicados = Comunicado.objects.order_by('-fecha_envio')
     categorias = Categoria.objects.all()
 
